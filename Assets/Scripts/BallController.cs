@@ -59,7 +59,7 @@ public class BallController : MonoBehaviour
             if (Vector3.Distance(transform.position, nextCollisionPosition) < 1)
             {
                 isTraveling = false;
-                audioSource.Play();
+                if (!audioSource.isPlaying) audioSource.Play();
                 travelDirection = Vector3.zero;
                 nextCollisionPosition = Vector3.zero;
             }
